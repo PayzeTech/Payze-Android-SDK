@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
     id("kotlin-parcelize")
+    id("maven-publish")
 }
 
 android {
@@ -58,4 +59,18 @@ dependencies {
     // Retrofit
     implementation(libs.retrofit)
     implementation (libs.converter.gson)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create("release", MavenPublication::class.java) {
+                from(components["release"])
+
+                groupId = "com.github.PayzeTech"
+                artifactId = "payze-android-sdk"
+                version = "1.0.0"
+            }
+        }
+    }
 }
