@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="20dp"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/mainLanguageBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ENG"
+        android:textColor="@color/white"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <com.payze.sdk.components.view.EditTextWithTitle
+            android:id="@+id/mainAmountInput"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="68dp"
+            app:inputTitle="Amount"
+            app:inputTextType="amountDecimal"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="20dp">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/mainUSDCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USD"
+                android:textColor="@color/lb_primary"/>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/mainSUMCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SUM"
+                android:textColor="@color/lb_primary"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.payze.sdk.components.view.EditTextWithTitle
+        android:id="@+id/mainInput"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        app:inputTitle="Test transaction ID"
+        android:layout_marginTop="10dp"/>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/mainCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check if you want test on PROD"
+        android:textColor="@color/lb_primary"/>
+
+    <Button
+        android:id="@+id/mainBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tap to test"
+        android:textColor="@color/white"/>
+
+</LinearLayout>

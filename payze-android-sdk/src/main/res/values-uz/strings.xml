@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="payze_card_title">To\’lov</string>
+    <string name="payze_card_amount">Qiymat</string>
+    <string name="payze_card_holder">Karta egasi</string>
+    <string name="payze_card_expires">Amal qilish muddati</string>
+    <string name="payze_card_number">Karta raqami</string>
+    <string name="payze_card_holder_hint">Ism</string>
+    <string name="payze_card_sec_code">Xavfsizlik kodi</string>
+    <string name="payze_card_next">To\’lash</string>
+    <string name="payze_card_number_invalid">Karta raqami noto\’g\’ri</string>
+    <string name="payze_card_exp_invalid">Amal qilish muddati tugagan</string>
+    <string name="payze_card_sec_invalid">CVV formati noto\’g\’ri</string>
+    <string name="payze_card_name_invalid">Karta egasi ism formati noto\’g\’ri</string>
+    <string name="payze_error_title">Xatolik sodir bo\’ldi…</string>
+    <string name="payze_error_message">Noma\'lum xatolik yuz berdi. Keyinroq qayta urinib ko\‘ring.</string>
+    <string name="payze_card_close">Yopish</string>
+    <string name="payze_web_title">Tasdiqlash</string>
+</resources>

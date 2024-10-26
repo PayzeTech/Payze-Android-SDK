@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="Theme.BaseApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="colorOnPrimary">@color/background</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondary</item>
+        <item name="colorOnSecondary">@color/background</item>
+        <item name="colorSecondaryContainer">#FFFFFF</item>
+
+        <item name="colorOnSurface">@color/lb_primary</item>
+        <item name="colorSurfaceContainer">@color/surface</item>
+        <item name="colorSurface">@color/surface</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <!-- Customize your theme here. -->
+
+        <item name="android:textColorPrimary">@color/lb_primary</item>
+
+    </style>
+
+</resources>
