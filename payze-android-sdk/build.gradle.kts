@@ -61,15 +61,15 @@ dependencies {
     implementation (libs.converter.gson)
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create("release", MavenPublication::class.java) {
-                from(components["release"])
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.github.PayzeTech"
+            artifactId = "payze-android-sdk"
+            version = "1.0.0"
 
-                groupId = "com.github.PayzeTech"
-                artifactId = "payze-android-sdk"
-                version = "1.0.0"
+            afterEvaluate {
+                from(components["release"])
             }
         }
     }
