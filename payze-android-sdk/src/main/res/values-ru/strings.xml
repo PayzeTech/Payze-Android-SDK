@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="payze_card_title">Оплата</string>
+    <string name="payze_card_amount">Сумма</string>
+    <string name="payze_card_holder">Имя карт держателя</string>
+    <string name="payze_card_expires">Срок действия</string>
+    <string name="payze_card_number">Номер карты</string>
+    <string name="payze_card_holder_hint">Имя</string>
+    <string name="payze_card_sec_code">Код безопасности</string>
+    <string name="payze_card_next">Оплатить</string>
+    <string name="payze_card_number_invalid">Неправильный номер карты</string>
+    <string name="payze_card_exp_invalid">Срок действий истек</string>
+    <string name="payze_card_sec_invalid">Неправильный CVV</string>
+    <string name="payze_card_name_invalid">Формат имя карт держателя неправильно</string>
+    <string name="payze_error_title">Что-то пошло не так…</string>
+    <string name="payze_error_message">Произошла неизвестная ошибка. Пожалуйста, повторите попытку позже.</string>
+    <string name="payze_card_close">Закрыть</string>
+    <string name="payze_web_title">Верификация</string>
+</resources>

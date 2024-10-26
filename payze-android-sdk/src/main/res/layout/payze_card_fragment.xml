@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="12dp"
+    tools:context=".presentation.card.ui.PayzeCardFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/payzeCardActionBtn"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/payzeCardTopView"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/payzeCardCompanyLogo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="end|center"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/payzeCardAmountTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:text="@string/payze_card_amount"
+                            android:textColor="@color/lb_secondary"
+                            android:textSize="12sp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/payzeCardAmountValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:textColor="@color/lb_primary"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            tools:text="$341.12" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.payze.sdk.components.view.EditTextWithTitle
+                android:id="@+id/payzeCardNumberInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:inputHint="0000 0000 0000 0000"
+                app:inputBottomMessage="@string/payze_card_number_invalid"
+                app:inputTitle="@string/payze_card_number" />
+
+            <LinearLayout
+                android:id="@+id/payzeCardInputView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <com.payze.sdk.components.view.EditTextWithTitle
+                    android:id="@+id/payzeCardDateInput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="0.5"
+                    app:inputHint="MM / YY"
+                    app:inputBottomMessage="@string/payze_card_exp_invalid"
+                    app:inputTextLength="9"
+                    app:inputTitle="@string/payze_card_expires" />
+
+                <com.payze.sdk.components.view.EditTextWithTitle
+                    android:id="@+id/payzeCardCodeInput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="0.5"
+                    android:visibility="gone"
+                    app:inputBottomMessage="@string/payze_card_sec_invalid"
+                    app:inputHint="@string/payze_card_sec_code"
+                    app:inputTextLength="3"
+                    app:inputTextType="number"
+                    app:inputTitle="CVV" />
+
+            </LinearLayout>
+
+            <com.payze.sdk.components.view.EditTextWithTitle
+                android:id="@+id/payzeCardNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:inputBottomMessage="@string/payze_card_name_invalid"
+                app:inputHint="@string/payze_card_holder_hint"
+                app:inputTitle="@string/payze_card_holder" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/payzeCardActionBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="26dp"
+        android:background="@drawable/bkg_action_disabled_btn"
+        android:text="@string/payze_card_next"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/payzeCardBottomLogo" />
+
+    <ImageView
+        android:id="@+id/payzeCardBottomLogo"
+        android:layout_width="85dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/bottom_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
