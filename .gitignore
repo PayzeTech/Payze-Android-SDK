@@ -1,0 +1,74 @@
+# Android Studio and build cache
+.idea/
+.gradle/
+build/
+local.properties
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IntelliJ configuration files
+*.iml
+*.iws
+*.ipr
+
+# APK, test cache, and temporary files
+*.apk
+*.ap_
+*.dex
+*.log
+*.keystore
+*.hprof
+
+# Maven and Gradle configurations
+.mvn/
+.settings/
+target/
+out/
+gradle-app.setting
+
+# Local configurations and cache
+.gradle/
+captures/
+.externalNativeBuild/
+
+# Firebase configuration
+google-services.json
+app/google-services.json
+
+# Optional Android Studio configurations
+app/*.apk
+app/*.ap_
+app/proguard-rules.pro
+
+# Debugging and crashlytics files
+fabric.properties
+crashlytics.properties
+
+# Common temporary files
+*.orig
+*.swo
+*.swp
+*.swn
+*.bak
+*.tmp
+*.swp
+
+# Files/directories for NDK (if used)
+obj/
+*.so
+
+# Android Studio configurations
+.idea/workspace.xml
+.idea/libraries
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/compiler.xml
+.idea/dictionaries
+.idea/shelf
+.idea/codeStyles/Project.xml
+.idea/runConfigurations

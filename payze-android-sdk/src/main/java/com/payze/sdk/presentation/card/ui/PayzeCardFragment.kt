@@ -18,7 +18,10 @@ import androidx.core.view.isVisible
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.payze.sdk.R
 import com.payze.sdk.components.AMEX_MASK
+import com.payze.sdk.components.DATE_KEYS
+import com.payze.sdk.components.DATE_MASK
 import com.payze.sdk.components.DEFAULT_MASK
+import com.payze.sdk.components.NUMBER_KEYS
 import com.payze.sdk.components.extensions.KeyboardHeightProvider
 import com.payze.sdk.components.extensions.disableBtn
 import com.payze.sdk.components.extensions.enableBtn
@@ -141,8 +144,8 @@ class PayzeCardFragment : Fragment() {
 
             updateCardFormat()
 
-            payzeCardDateInput.input.addTextChangedListener(CustomTextWatcher("XX / XX"))
-            payzeCardDateInput.input.keyListener = DigitsKeyListener.getInstance("0123456789 /")
+            payzeCardDateInput.input.addTextChangedListener(CustomTextWatcher(DATE_MASK))
+            payzeCardDateInput.input.keyListener = DigitsKeyListener.getInstance(DATE_KEYS)
 
             payzeCardNumberInput.setListener {
                 validateInfo()
@@ -268,12 +271,12 @@ class PayzeCardFragment : Fragment() {
                 payzeCardNumberInput.input.removeTextChangedListener(watcherAmex)
                 payzeCardNumberInput.input.removeTextChangedListener(watcherDefault)
                 payzeCardNumberInput.input.addTextChangedListener(watcherAmex)
-                payzeCardNumberInput.input.keyListener = DigitsKeyListener.getInstance("0123456789 ")
+                payzeCardNumberInput.input.keyListener = DigitsKeyListener.getInstance(NUMBER_KEYS)
             } else {
                 payzeCardNumberInput.input.removeTextChangedListener(watcherAmex)
                 payzeCardNumberInput.input.removeTextChangedListener(watcherDefault)
                 payzeCardNumberInput.input.addTextChangedListener(watcherDefault)
-                payzeCardNumberInput.input.keyListener = DigitsKeyListener.getInstance("0123456789 ")
+                payzeCardNumberInput.input.keyListener = DigitsKeyListener.getInstance(NUMBER_KEYS)
             }
         }
     }
