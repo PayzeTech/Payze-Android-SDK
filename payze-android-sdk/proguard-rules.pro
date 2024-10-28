@@ -19,3 +19,35 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Retrofit
+-dontwarn retrofit2.**
+-keep class retrofit2.** { *; }
+-keepattributes Signature
+
+# Retrofit method annotations
+-keepclasseswithmembers class * {
+    @retrofit2.http.* <methods>;
+}
+
+# Retrofit Gson Converter
+-dontwarn com.google.gson.**
+-keep class com.google.gson.** { *; }
+-keepattributes Signature
+-keepattributes *Annotation*
+-keep class * extends com.google.gson.TypeAdapter
+-keep class com.google.gson.reflect.TypeToken
+
+# Koin
+-dontwarn org.koin.**
+-keepclassmembers class org.koin.** { *; }
+-keepclassmembers class * {
+    @org.koin.core.annotation.* <fields>;
+    @org.koin.core.annotation.* <methods>;
+}
+
+-keepclassmembers class kotlin.Metadata { *; }
+-keepattributes *Annotation*
+-dontwarn kotlin.**
+
+-dontwarn java.lang.invoke.StringConcatFactory
