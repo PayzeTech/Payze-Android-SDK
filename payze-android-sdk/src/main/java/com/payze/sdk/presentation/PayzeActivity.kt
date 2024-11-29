@@ -8,15 +8,11 @@ import com.payze.sdk.R
 import com.payze.sdk.components.extensions.bottomPadding
 import com.payze.sdk.components.extensions.visibleIf
 import com.payze.sdk.databinding.ActivityPayzeBinding
+import com.payze.sdk.di.IsolatedKoinContext
 import com.payze.sdk.di.networkModule
 import com.payze.sdk.model.PayzeActivityData
-import com.payze.sdk.model.Currency
-import com.payze.sdk.presentation.card.di.cardModule
 import com.payze.sdk.presentation.card.ui.PayzeCardFragment
-import com.payze.sdk.presentation.web_view.di.webModule
 import com.payze.sdk.presentation.web_view.ui.PayzeWebFragment
-import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
 
 class PayzeActivity : AppCompatActivity() {
@@ -60,16 +56,11 @@ class PayzeActivity : AppCompatActivity() {
 
         payzeData = intent.getParcelableExtra(PayzeActivityData.KEY_DATA)
 
-        startKoin {
-            androidContext(this@PayzeActivity)
-            modules(
-                listOf(
-                    networkModule(payzeData?.environment),
-                    cardModule,
-                    webModule
-                )
+        IsolatedKoinContext.koinApp.koin.loadModules(
+            listOf(
+                networkModule(payzeData?.environment)
             )
-        }
+        )
 
         supportFragmentManager.beginTransaction()
             .replace(

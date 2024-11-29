@@ -10,6 +10,8 @@ import com.payze.sdk.model.Language
 import com.payze.sdk.model.Money
 import com.payze.sdk.model.PayzeResult
 import com.payze.sdk.model.ServiceEnvironment
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +23,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
+
+        startKoin {
+            androidContext(this@MainActivity)
+        }
 
         payze = Payze(context = this)
 

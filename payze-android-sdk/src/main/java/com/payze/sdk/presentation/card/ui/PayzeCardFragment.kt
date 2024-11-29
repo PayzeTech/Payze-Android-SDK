@@ -33,6 +33,7 @@ import com.payze.sdk.components.extensions.validDate
 import com.payze.sdk.components.formatter.AsteriskPasswordTransformationMethod
 import com.payze.sdk.components.formatter.CustomTextWatcher
 import com.payze.sdk.databinding.PayzeCardFragmentBinding
+import com.payze.sdk.di.IsolatedKoinContext
 import com.payze.sdk.manager.Payze.Companion.RETURN_DATA
 import com.payze.sdk.model.CardBrandType
 import com.payze.sdk.model.Language
@@ -50,7 +51,7 @@ class PayzeCardFragment : Fragment() {
     private var transactionId: String = ""
     private var language: Language? = null
     private var amount: Money? = null
-    private val viewModel: PayzeCardVm by viewModel()
+    private val viewModel: PayzeCardVm = IsolatedKoinContext.koin.get()
 
     private val watcherAmex = CustomTextWatcher(AMEX_MASK)
     private val watcherDefault = CustomTextWatcher(DEFAULT_MASK)

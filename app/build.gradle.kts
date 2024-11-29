@@ -49,5 +49,7 @@ dependencies {
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
+    implementation(libs.koin.android)
+
     implementation(project(":payze-android-sdk"))
 }
