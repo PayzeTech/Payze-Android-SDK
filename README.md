@@ -21,7 +21,7 @@ dependencies {
 ```
 
 # Usage:
-Just create instance of Payze class with context and call method 'init()' in onCreate(). Then call method 'start(...)'. This method takes language, transactionId, amount data, company logo resource, environment & result callback as parameters.
+Just create instance of Payze class with context and call method 'init()' in onCreate(). Then call method 'start(...)'. This method takes language, transactionId, amount data, company logo resource, isLogEnabled, environment & result callback as parameters.
 
 ```bash
 private val payze = Payze(requireContext())
@@ -32,6 +32,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 }
 
 payze.start(
+    isLogEnabled = true,
     language = Language.EN,
     transactionId = "add transaction id",
     companyLogoRes = R.drawable.company_logo,
