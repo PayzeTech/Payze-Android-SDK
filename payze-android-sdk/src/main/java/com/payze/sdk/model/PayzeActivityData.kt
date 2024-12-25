@@ -9,7 +9,8 @@ data class PayzeActivityData(
     val transactionId: String,
     val companyLogoRes: Int = -1,
     val amount: Money,
-    val environment: ServiceEnvironment
+    val environment: ServiceEnvironment,
+    val isLogEnabled: Boolean
 ): Parcelable {
 
     companion object {

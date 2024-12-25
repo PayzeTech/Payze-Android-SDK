@@ -16,7 +16,7 @@ android {
         consumerProguardFiles("consumer-rules.pro")
 
         buildConfigField("String", "BASE_URL_DEV", "\"https://paygate.payze.dev/\"")
-        buildConfigField("String", "BASE_URL_PROD", "\"https://payze.uz/\"")
+        buildConfigField("String", "BASE_URL_PROD", "\"https://paygate.payze.uz/\"")
     }
 
     buildTypes {
@@ -59,6 +59,7 @@ dependencies {
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.1")
 }
 
 publishing {

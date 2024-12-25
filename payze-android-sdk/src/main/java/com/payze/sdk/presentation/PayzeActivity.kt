@@ -58,7 +58,7 @@ class PayzeActivity : AppCompatActivity() {
 
         IsolatedKoinContext.koinApp.koin.loadModules(
             listOf(
-                networkModule(payzeData?.environment)
+                networkModule(payzeData?.environment, payzeData?.isLogEnabled!!)
             )
         )
 

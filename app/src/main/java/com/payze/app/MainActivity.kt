@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
 
         binding!!.mainBtn.setOnClickListener {
             payze.start(
+                isLogEnabled = true,
                 language = language,
                 transactionId = binding!!.mainInput.getText() ?: "",
                 companyLogoRes = R.drawable.ic_launcher_foreground,

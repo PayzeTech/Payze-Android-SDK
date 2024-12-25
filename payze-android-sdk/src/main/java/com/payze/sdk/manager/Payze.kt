@@ -34,6 +34,7 @@ class Payze(private val context: Context) {
     }
 
     fun start(
+        isLogEnabled: Boolean = false,
         language: Language?,
         transactionId: String,
         companyLogoRes: Int = -1,
@@ -51,7 +52,8 @@ class Payze(private val context: Context) {
                 transactionId = transactionId,
                 companyLogoRes = companyLogoRes,
                 amount = amount,
-                environment = environment
+                environment = environment,
+                isLogEnabled = isLogEnabled
             )
         )
         getResult.launch(intent)
